@@ -6,10 +6,57 @@
 
   <style>
 
-     h1,  h1 a,  h1 a:visited,  h1 a:active {
+    h1.label , h1.label :visited {
+      text-align:center;
       margin-top: 0;
       padding: 20px 20px 20px 40px;
-      color: #000000;
+      color: {{activeperson.datecolor}};
+      font-size: xx-large;
+      font-weight:bold;
+      font-family: 'Arial';
+      text-decoration: none;
+    }
+
+    h2 a span, h2 a span:visited {
+      color: 'black';'
+    }
+
+
+{% comment %}
+    em.author {
+      font-style:normal;
+    }
+{% endcomment %}
+
+    h2.attendees , h2.attendees :visited {
+      color: {{activeperson.attendeescolor}};
+    }
+
+    h2.date , h2.date :visited {
+      color: {{activeperson.datecolor}};
+    }
+
+    h2.label , h2.label :visited {
+      color: {{activeperson.datecolor}};
+    }
+
+    {% if activeperson.reversevideo = False %}
+
+    h1.label , h1.label :visited {
+      margin-top: 0;
+      padding: 20px 20px 20px 40px;
+      color: {{activeperson.datecolor}};
+      font-size: xx-large;
+      font-weight:bold;
+      font-family: 'Arial';
+      text-align:center;
+      text-decoration: none;
+    }
+
+    h1,  h1 a, h1:visited, h1 a:visited,  h1 a:active {
+      margin-top: 0;
+      padding: 20px 20px 20px 40px;
+      color: {{activeperson.datecolor}};
       background-color:{{activeperson.backgroundcolor}};
       font-size: xx-large;
       font-weight:bold;
@@ -18,81 +65,192 @@
       text-decoration: none;
     }
 
-    h2, h2:visited {
-      color: #000000;
-      background-color:{{activeperson.backgroundcolor}};
-      font-size: x-large;
-      font-weight:bold;
-      padding-left:15px;
-    }
 
-    h2 a, h2 a:visited {
-      color: #000000;
-      background-color:{{activeperson.backgroundcolor}};
-      font-size: x-large;
-      font-weight:bold;
-      text-align:center;
-    }
-
-{% comment %}
-    h2.item , h2.item :visited {
-      color: #0000c0;
-    }
-{% endcomment %}
 
     h2.item , h2.item :visited {
       color: {{activeperson.detailcolor}};
     }
 
 
-    h2.attendees , h2.attendees :visited {
-      color: {{activeperson.attendeescolor}};
+    h2 a, h2 a:visited {
+      color: #000000;
+      background-color:{{activeperson.backgroundcolor}};
+      font-size: x-large;
+      font-weight:bold;
     }
+
 
     h2 span.label , h2 span.label :visited {
       font-size: x-large;
       font-weight:bold;
-      color: #000000;
+      color: {{activeperson.datecolor}};
     }
 
-    h2.error , h2.error :visited {
-      color: #FF0000;
+    h2 span.date , h2 span.date :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.datecolor}};
+    }
+
+    h2 span.detail , h2 span.detail :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.detailcolor}};
+    }
+
+    h2 span.attendees , h2 span.attendees :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.attendeescolor}};
+    }
+
+    h2 span.author , h2 span.author :visited {
+      color: #DF9000;
+      font-size: x-large;
+      font-weight:bold;
     }
 
     hr {
-      color: #000000;
+      color: {{activeperson.datecolor}};
       background-color:{{activeperson.backgroundcolor}};
       font-weight:bold;
     }
-
-    em.author {
-      color: #DF9000;
-      background-color:{{activeperson.backgroundcolor}};
-      font-style:normal;
-      font-weight:bold;
-    }
-
-
-
 
     body {
       background-color:{{activeperson.backgroundcolor}};
     }
 
+
     td {
+      color: {{activeperson.datecolor}};
       padding-left:15px;
     }
 
     .top-menu, .top-menu:hover, .top-menu:visited {
-      color: #000000;
+      color: {{activeperson.datecolor}};
       float: right;
       font-size: 26pt;
       margin-right: 20px;
     }
 
+
+    {% else %}
+
+    h1.label , h1.label :visited {
+      text-align:center;
+      margin-top: 0;
+      padding: 20px 20px 20px 40px;
+      color: {{activeperson.datecolor_rev}};
+      font-size: xx-large;
+      font-weight:bold;
+      font-family: 'Arial';
+      text-decoration: none;
+    }
+
+    h1,  h1 a, h1:visited, h1 a:visited,  h1 a:active {
+      margin-top: 0;
+      padding: 20px 20px 20px 40px;
+      color: {{activeperson.datecolor_rev}};
+      background-color:{{activeperson.backgroundcolor_rev}};
+      font-size: xx-large;
+      font-weight:bold;
+      font-family: 'Arial';
+      text-align:center;
+      text-decoration: none;
+    }
+
+    h2.item , h2.item :visited {
+      color: {{activeperson.detailcolor_rev}};
+    }
+
+    h2 a, h2 a:visited {
+      color: #000000;
+      background-color:{{activeperson.backgroundcolor_rev}};
+      font-size: x-large;
+      font-weight:bold;
+    }
+
+
+    h2 span.label , h2 span.label :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.datecolor_rev}};
+    }
+
+    h2 span.date , h2 span.date :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.datecolor_rev}};
+    }
+
+    h2 span.detail , h2 span.detail :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.detailcolor_rev}};
+    }
+
+    h2 span.attendees , h2 span.attendees :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.attendeescolor_rev}};
+    }
+
+    h2 span.author , h2 span.author :visited {
+      color: #DF9000;
+      font-size: x-large;
+      font-weight:bold;
+    }
+
+    hr {
+      color: {{activeperson.datecolor_rev}};
+      background-color:{{activeperson.backgroundcolor_rev}};
+      font-weight:bold;
+    }
+
+    body {
+      background-color:{{activeperson.backgroundcolor_rev}};
+    }
+
+    td {
+      color: {{activeperson.datecolor_rev}};
+      padding-left:15px;
+    }
+
+    .top-menu, .top-menu:hover, .top-menu:visited {
+      color: {{activeperson.datecolor_rev}};
+      float: right;
+      font-size: 26pt;
+      margin-right: 20px;
+    }
+
+
+    {% endif %}
+
+
+
+
+
+    h2.date a span , h2.date a span :visited {
+      color: 'black';
+    }
+
+
+
+    h2.error , h2.error :visited {
+      color: #FF0000;
+    }
+
+
+
+
+
+
   </style>
 </head>
 <body>
+<<<<<<< HEAD
+
+=======
     {% comment %}
     {% if user.is_authenticated %}
       {% if not unsubscribed %}
@@ -101,14 +259,22 @@
     {% else %}
        <p class="top-menu"><small>(<a href="{% url 'django.contrib.auth.views.login' %}">Log in</a>)</small></p>
     {% endcomment %}
+>>>>>>> e3177c2675df56f29e5028e751e11cf9f2ce51e0
     {% if activeperson.username = 'default' %}
         <p class="top-menu"><small><a href="{% url 'django.contrib.auth.views.login' %}">Log in</a></small></p>
     {% endif %}
-    <h1>Harrow Coffee Pot</h1>
+    <h1 class='label'>{{title}}</h1>
     <hr>
       {% block content %}
       {% endblock %}
 </body>
 </html>
+    {% comment %}
+    {% if user.is_authenticated %}
+      {% if not unsubscribed %}
+        <p class="top-menu"><small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
+      {% endif %}
+    {% else %}
+    {% endcomment %}
 {#    <h1><a href="{% url 'events_app_b.views.event_list' %}">Harrow Coffee Pot</a></h1> #}
  {#         <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>#}
