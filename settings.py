@@ -25,6 +25,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@%hbn=!+ivle&5!6jcsexkh@m*_7^(pdl^t9#q-&1cs88$ew3-'
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+TEMPLATE_DEBUG = False
+ALLOWED_HOSTS = ['.coffeepot.pythonanywhere.com',]
+
+
+# Application definition
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
