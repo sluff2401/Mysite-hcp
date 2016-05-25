@@ -99,13 +99,10 @@
         <p class="top-menu"><small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
       {% endif %}
     {% else %}
-<<<<<<< HEAD
        <p class="top-menu"><small>(<a href="{% url 'django.contrib.auth.views.login' %}">Log in</a>)</small></p>
-=======
     {% endcomment %}
     {% if activeperson.username = 'default' %}
         <p class="top-menu"><small><a href="{% url 'django.contrib.auth.views.login' %}">Log in</a></small></p>
->>>>>>> a9c1831b03670b753439dee5bcb0af7f138261c2
     {% endif %}
     <h1>Harrow Coffee Pot</h1>
     <hr>
