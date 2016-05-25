@@ -240,31 +240,20 @@
       color: #FF0000;
     }
 
-
-
-
-
-
   </style>
 </head>
 <body>
-<<<<<<< HEAD
 
-=======
     {% comment %}
     {% if user.is_authenticated %}
       {% if not unsubscribed %}
         <p class="top-menu"><small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
       {% endif %}
     {% else %}
-<<<<<<< HEAD
        <p class="top-menu"><small>(<a href="{% url 'django.contrib.auth.views.login' %}">Log in</a>)</small></p>
-=======
     {% endcomment %}
->>>>>>> e3177c2675df56f29e5028e751e11cf9f2ce51e0
     {% if activeperson.username = 'default' %}
         <p class="top-menu"><small><a href="{% url 'django.contrib.auth.views.login' %}">Log in</a></small></p>
->>>>>>> a9c1831b03670b753439dee5bcb0af7f138261c2
     {% endif %}
     <h1 class='label'>{{title}}</h1>
     <hr>
