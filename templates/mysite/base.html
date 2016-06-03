@@ -17,9 +17,7 @@
       text-decoration: none;
     }
 
-    h2 a span, h2 a span:visited {
-      color: 'black';'
-    }
+
 
 
 {% comment %}
@@ -65,19 +63,19 @@
       text-decoration: none;
     }
 
-
-
     h2.item , h2.item :visited {
-      color: {{activeperson.detailcolor}};
+      color: {{activeperson.backgroundcolor}};
     }
 
-
+{% comment %}
     h2 a, h2 a:visited {
-      color: #000000;
+      color: {{activeperson.detailcolor}};
       background-color:{{activeperson.backgroundcolor}};
       font-size: x-large;
       font-weight:bold;
     }
+{% endcomment %}
+
 
 
     h2 span.label , h2 span.label :visited {
@@ -102,6 +100,12 @@
       font-size: x-large;
       font-weight:bold;
       color: {{activeperson.attendeescolor}};
+    }
+
+    h2 span.background , h2 span.background :visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.backgroundcolor}};
     }
 
     h2 span.author , h2 span.author :visited {
@@ -164,43 +168,49 @@
       text-decoration: none;
     }
 
-    h2.item , h2.item :visited {
-      color: {{activeperson.detailcolor_rev}};
+    h2.item , h2.item:visited {
+      color: {{activeperson.backgroundcolor_rev}};
     }
-
+{% comment %}
     h2 a, h2 a:visited {
-      color: #000000;
+      color: {{activeperson.detailcolor_rev}};
       background-color:{{activeperson.backgroundcolor_rev}};
       font-size: x-large;
       font-weight:bold;
     }
+{% endcomment %}
 
-
-    h2 span.label , h2 span.label :visited {
+    h2 span.label , h2 span.label:visited {
       font-size: x-large;
       font-weight:bold;
       color: {{activeperson.datecolor_rev}};
     }
 
-    h2 span.date , h2 span.date :visited {
+    h2 span.date , h2 span.date:visited {
       font-size: x-large;
       font-weight:bold;
       color: {{activeperson.datecolor_rev}};
     }
 
-    h2 span.detail , h2 span.detail :visited {
+    h2 span.detail , h2 span.detail:visited {
       font-size: x-large;
       font-weight:bold;
       color: {{activeperson.detailcolor_rev}};
     }
 
-    h2 span.attendees , h2 span.attendees :visited {
+    h2 span.attendees , h2 span.attendees:visited {
       font-size: x-large;
       font-weight:bold;
       color: {{activeperson.attendeescolor_rev}};
     }
 
-    h2 span.author , h2 span.author :visited {
+    h2 span.background , h2 span.background:visited {
+      font-size: x-large;
+      font-weight:bold;
+      color: {{activeperson.backgroundcolor_rev}};
+    }
+
+    h2 span.author , h2 span.author:visited {
       color: #DF9000;
       font-size: x-large;
       font-weight:bold;
@@ -254,6 +264,14 @@
       color: #FF0000;
     }
 
+    h2 a span {
+      color: 'crimson';
+    }
+
+    h2 a span:visited {
+      color: 'black';
+    }
+
   </style>
 </head>
 <body>
@@ -269,8 +287,14 @@
     {% if activeperson.username = 'default' %}
         <p class="top-menu"><small><a href="{% url 'django.contrib.auth.views.login' %}">Log in</a></small></p>
     {% endif %}
-    <h1 class='label'>{{title}}</h1>
-    <hr>
+
+    {% if IS_CLUB %}
+      <h1 class='label'>{{title}}</h1>
+      <hr>
+    {% endif %}
+
+
+
       {% block content %}
       {% endblock %}
 </body>
@@ -282,5 +306,5 @@
       {% endif %}
     {% else %}
     {% endcomment %}
-{#    <h1><a href="{% url 'events_app_b.views.event_list' %}">Harrow Coffee Pot</a></h1> #}
+
  {#         <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>#}
