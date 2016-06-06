@@ -9,13 +9,6 @@ from mysite.settings                import IS_CLUB
 
 
 # functions which do not update the database
-'''
-@login_required
-def siteadmin_detail(request):
-  activeuser                              =  User.objects.get(id=request.user.id)
-  activeperson                            =  Person.objects.get(username=activeuser.username)
-  return render(request, 'mysite/siteadmin_detail.html', { 'activeperson': activeperson, 'IS_CLUB': IS_CLUB})
-'''
 
 @login_required
 def advert_display(request):
@@ -29,12 +22,9 @@ def advert_display(request):
 def advert_insert(request):
   activeuser                            =  User.objects.get(id=request.user.id)    # get details of activeuser
   activeperson                          =  Person.objects.get(username=activeuser.username)
-  if activeperson.status                >= 60:
-    can_insert                          = True
-  else:
-    can_insert                          = False
+
   if request.method                     != "POST": # i.e. method == "GET":
-    if can_insert:
+    if activeperson.status             >= 60:
       form = InsertAdvertForm()                                               # get a blank InsertPersonForm
       return render(request, 'mysite/advert_new.html', {'form': form})
     else:

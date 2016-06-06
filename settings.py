@@ -1,7 +1,9 @@
-DEBUG = True
-ALLOWED_HOSTS = ['.cliveogilvie.pythonanywhere.com',]
-IS_CLUB = True
-TITLE = 'Coffee Pot'
+from project1 import settings_extra
+
+SECRET_KEY = settings_extra.SECRET_KEY#ALLOWED_HOSTS = settings_extra.ALLOWED_HOSTS
+DEBUG = settings_extra.DEBUG
+IS_CLUB = settings_extra.IS_CLUB
+TITLE = settings_extra.TITLE
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -23,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@%hbn=!+ivle&5!6jcsexkh@m*_7^(pdl^t9#q-&1cs88$ew3-'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
