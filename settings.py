@@ -1,13 +1,19 @@
-from project1 import settings_extra
 
-SECRET_KEY = settings_extra.SECRET_KEY#ALLOWED_HOSTS = settings_extra.ALLOWED_HOSTS
+from project1 import settings_extra
+SECRET_KEY = settings_extra.SECRET_KEY
+ALLOWED_HOSTS = settings_extra.ALLOWED_HOSTS
 DEBUG = settings_extra.DEBUG
 IS_CLUB = settings_extra.IS_CLUB
 TITLE = settings_extra.TITLE
 
 TEMPLATE_DEBUG = DEBUG
-
-
+'''
+DEBUG = True
+SECRET_KEY = 'x'
+IS_CLUB = True
+TITLE= 'TEMPORARY HEADING'
+ALLOWED_HOSTS = ['.cliveogilvie.pythonanywhere.com',]
+'''
 """
 For more information on this file, see
 https://docs.djangoproject.com/en/1.8/topics/settings/
